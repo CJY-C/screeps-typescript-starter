@@ -14,8 +14,6 @@
       // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
         "ms-azuretools.vscode-docker",
-        "GitHub.copilot",
-        "GitHub.copilot-chat",
         "redjue.git-commit-plugin",
         "vscodevim.vim"
       ]
