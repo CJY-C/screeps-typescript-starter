@@ -6,13 +6,19 @@
   "dockerFile": "Dockerfile",
   // Set *default* container specific settings.json values on container create.
   "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
+    "terminal.integrated.shell.linux": "/bin/ash"
   },
   "customizations": {
     "vscode": {
       "settings": {},
       // Add the IDs of extensions you want installed when the container is created.
-      "extensions": []
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "redjue.git-commit-plugin",
+        "vscodevim.vim"
+      ]
     }
   },
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -25,7 +31,7 @@
   "mounts": [
     "type=bind,source=${localWorkspaceFolder},target=/Screeps"
   ],
-  "postCreateCommand": "/workspaces/screeps-typescript-starter-master/.devcontainer/setup.sh"
+  "postCreateCommand": "/bin/sh -c .devcontainer/setup.sh"
   // Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
   // "remoteUser": "vscode"
 }
